@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+	<include file="$(find arduino_serial)/launch/serial_node.launch"/>
+
+
+	<node pkg="clab_bringup" name="main" type="clab.py" />
+
+	<node pkg="wakeup_lidar" name="screen_wakeup" type="lidar_reponse.py" />
+
+
+
+	<include file="$(find learning_joy)/launch/turtle_joy.launch" />
+	<!-- <include file="$(find dynamixel_workbench_controllers)/launch/wheels.launch" /> -->
+
+	
+	<include file="$(find clab_navigation)/launch/navigation.launch" />
+
+</launch>

@@ -1,0 +1,19 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 1
+  publish_frequency: 1
+  static_map: true
+  rolling_window: false
+  plugins:
+    - {name: static,type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer,type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation,type: "costmap_2d::InflationLayer"}
+  inflation:
+    inflation_radius: 10.0
+    cost_scaling_factor: 3.0
+
+# if needed obstace layer
+  obstacle_layer:
+    observation_sources: scan
+    scan: {sensor_frame: laser_link, data_type: LaserScan, topic: scan_filtered, marking: true, clearing: true, inf_is_valid: false}

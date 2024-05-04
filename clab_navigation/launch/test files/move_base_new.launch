@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<launch>
+  <master auto="start"/>
+
+  <arg name="odom_topic" default="odom" />
+
+<!--  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">-->
+<!--      -->
+
+ <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="tf_timeout" value="1.5"/>
+    <param name="planner_max_retries" value="3"/>
+
+    <param name="controller_frequency" value="25.0" />
+    <rosparam file="$(find hdf_nav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find hdf_nav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find hdf_nav)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find hdf_nav)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find hdf_nav)/config/recovery_behaviors.yaml" command="load" /> 
+    <rosparam file="$(find hdf_nav)/config/controllers.yaml" command="load" />
+    <rosparam file="$(find hdf_nav)/config/planners.yaml" command="load" />
+
+
+    <!--arg name="cmd_vel" /-->
+    <remap from="/cmd_vel" to="/dynamixel_workbench/cmd_vel"/>
+  </node>
+
+ <!--<node  pkg="hdf_nav" type="mbf_state_machine.py" name="mbf_state_machine" output="screen"/>-->
+
+ 
+
+
+  <!--node pkg="gmapping" type="slam_gmapping" respawn="false" name="slam_gmapping" args="scan:=scan" >
+  </node-->
+
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+    <arg name="LED_number" default="10"/>
+    <arg name="topic_name" default="/led_control"/>
+
+    <node name="led_control_node" pkg="jetson_led_control" type="led_control_node.py" output="screen">
+        <param name="LED_number" value="$(arg LED_number)" type="int"/>
+        <param name="topic_name" value="$(arg topic_name)"/>
+    </node>
+
+</launch>

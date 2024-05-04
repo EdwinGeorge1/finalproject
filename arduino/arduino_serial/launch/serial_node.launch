@@ -1,0 +1,13 @@
+<launch>
+    <arg name="port" default="/dev/usb_arduino"/>
+    <arg name="baud" default="9600"/>
+    <arg name="battery_voltage_topic" default="/battery_voltage"/>
+    <arg name="led_control_topic" default="/led_control"/>
+
+    <node name="serial_node" pkg="arduino_serial" type="serial_node" output="screen">
+        <param name="port" value="$(arg port)"/>
+        <param name="baud" value="$(arg baud)"/>
+        <remap from="/battery_voltage" to="$(arg battery_voltage_topic)"/>
+        <remap from="/led_control" to="$(arg led_control_topic)"/>
+    </node>
+</launch>

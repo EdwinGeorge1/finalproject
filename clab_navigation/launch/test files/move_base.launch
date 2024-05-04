@@ -1,0 +1,18 @@
+<launch>
+
+   <master auto="start"/>
+
+   <arg name="odom_topic" default="odom" />
+
+   <node pkg="mbf_costmap_nav" type="mbf_costmap_nav" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find clab_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find clab_navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find clab_navigation)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find clab_navigation)/config/global_costmap_params.yaml" command="load" /> 
+    <rosparam file="$(find clab_navigation)/config/recovery_behaviors.yaml" command="load" /> 
+    <rosparam file="$(find clab_navigation)/config/controllers.yaml" command="load" />
+    <rosparam file="$(find clab_navigation)/config/planners.yaml" command="load" />
+
+ </node>
+
+</launch> 

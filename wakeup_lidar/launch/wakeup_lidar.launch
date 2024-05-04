@@ -1,0 +1,15 @@
+<launch>
+    <arg name="wakeup_distance" default="1.5"/> <!--in metres--> <!-- default = 1 -->
+    <arg name="wakeup_threshold" default="20"/> <!-- number of points difference between checks --> <!-- default = 30 -->
+    <arg name="check_freq" default="5"/> <!-- check once every x scans --> <!-- default = 10 -->
+    <arg name="lidar_topic" default="/scan_filtered"/>
+    <arg name="wakeup_topic" default="/wakeup_lidar"/> 
+
+    <node name="wakeup_lidar_node" pkg="wakeup_lidar" type="wakeup_lidar_node" output="screen">
+        <remap from="/scan" to="$(arg lidar_topic)"/>
+        <remap from="/wakeup_lidar" to="$(arg wakeup_topic)"/>
+        <param name="wakeup_distance" value="$(arg wakeup_distance)" type="double"/>
+        <param name="wakeup_threshold" value="$(arg wakeup_threshold)"/>
+        <param name="check_freq" value="$(arg check_freq)"/>
+    </node>
+</launch>	

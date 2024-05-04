@@ -1,0 +1,230 @@
+<?xml version="1.0" ?>
+<robot name="final" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find clab_base_oriented_urdf)/urdf/materials.xacro" />
+<xacro:include filename="$(find clab_base_oriented_urdf)/urdf/final.trans" />
+<xacro:include filename="$(find clab_base_oriented_urdf)/urdf/final.gazebo" />
+<link name="base_link"/>
+
+<link name="dummy">
+  <inertial>
+    <origin xyz="0.0002740847451858386 0.00104137153651487 0.05918337575258547" rpy="0 0 0"/>
+    <mass value="5.192562780150939"/>
+    <inertia ixx="0.052115" iyy="0.056169" izz="0.107983" ixy="-3.4e-05" iyz="-5e-06" ixz="-0.000645"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_bracket_1">
+  <inertial>
+    <origin xyz="0.12150632658655187 -0.16391862005130825 -0.06787993255011897" rpy="0 0 0"/>
+    <mass value="0.0339205638991619"/>
+    <inertia ixx="1.2e-05" iyy="1.1e-05" izz="1.1e-05" ixy="0.0" iyz="-3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.115349" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_bracket_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.115349" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_bracket_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_motor_1">
+  <inertial>
+    <origin xyz="0.007479401245053613 0.031041669068612415 0.012935476165405104" rpy="0 0 0"/>
+    <mass value="0.06268551144302958"/>
+    <inertia ixx="2.7e-05" iyy="1e-05" izz="2.7e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.113756 0.174038 -0.016251" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.113756 0.174038 -0.016251" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_bracket_Mirror__1">
+  <inertial>
+    <origin xyz="0.2995063265865481 0.34110497710292775 -0.06787993255011932" rpy="0 0 0"/>
+    <mass value="0.033920563899161926"/>
+    <inertia ixx="1.2e-05" iyy="1.1e-05" izz="1.1e-05" ixy="-0.0" iyz="3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1775 0.1775 -0.115349" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_bracket_Mirror__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1775 0.1775 -0.115349" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_bracket_Mirror__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_motor_Mirror__1">
+  <inertial>
+    <origin xyz="-0.014696633977940854 0.10496468798300612 0.17352126800580758" rpy="0 0 0"/>
+    <mass value="0.06268551144302958"/>
+    <inertia ixx="2.7e-05" iyy="1e-05" izz="2.7e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.138681 -0.037718 0.144049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_motor_Mirror__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.138681 -0.037718 0.144049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/right_motor_Mirror__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v2_1">
+  <inertial>
+    <origin xyz="-1.5648361721687376e-07 -0.009999821474193538 4.5719482423545177e-07" rpy="0 0 0"/>
+    <mass value="0.14994193417053372"/>
+    <inertia ixx="1.7e-05" iyy="2.3e-05" izz="1.7e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.12133 0.180038 -0.02257" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/wheel_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.12133 0.180038 -0.02257" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/wheel_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_v2_Mirror__1">
+  <inertial>
+    <origin xyz="3.009709530071847e-07 0.010000178525811948 -5.7359007609586454e-08" rpy="0 0 0"/>
+    <mass value="0.14994193417053372"/>
+    <inertia ixx="1.7e-05" iyy="2.3e-05" izz="1.7e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.12181 -0.179724 -0.023223" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/wheel_v2_Mirror__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.12181 -0.179724 -0.023223" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/wheel_v2_Mirror__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_v1_1">
+  <inertial>
+    <origin xyz="0.2962746537397236 0.19400140168829016 -0.02241210760548261" rpy="0 0 0"/>
+    <mass value="1.3389387535639667"/>
+    <inertia ixx="0.000619" iyy="0.000967" izz="0.001105" ixy="-1e-06" iyz="-3e-06" ixz="0.000159"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1775 0.1775 -0.120349" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/lidar_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1775 0.1775 -0.120349" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://clab_base_oriented_urdf/meshes/lidar_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 2" type="fixed">
+  <origin xyz="0.0 0.0 0.115349" rpy="0 0 0"/>
+  <parent link="dummy"/>
+  <child link="right_bracket_1"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="0.113756 -0.174038 -0.099098" rpy="0 0 0"/>
+  <parent link="right_bracket_1"/>
+  <child link="right_motor_1"/>
+</joint>
+
+<joint name="Rigid 10" type="fixed">
+  <origin xyz="-0.1775 -0.1775 0.115349" rpy="0 0 0"/>
+  <parent link="dummy"/>
+  <child link="right_bracket_Mirror__1"/>
+</joint>
+
+<joint name="Rigid 11" type="fixed">
+  <origin xyz="0.316181 0.215218 -0.259398" rpy="0 0 0"/>
+  <parent link="right_bracket_Mirror__1"/>
+  <child link="right_motor_Mirror__1"/>
+</joint>
+
+<joint name="Revolute 13" type="continuous">
+  <origin xyz="0.007574 -0.006 0.006319" rpy="0 0 0"/>
+  <parent link="right_motor_1"/>
+  <child link="wheel_v2_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Revolute 14" type="continuous">
+  <origin xyz="-0.016871 0.142006 0.167272" rpy="0 0 0"/>
+  <parent link="right_motor_Mirror__1"/>
+  <child link="wheel_v2_Mirror__1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rigid 15" type="fixed">
+  <origin xyz="-0.1775 -0.1775 0.120349" rpy="0 0 1.57"/>
+  <parent link="dummy"/>
+  <child link="lidar_v1_1"/>
+  <axis xyz="0 0 1"/> <!-- Same axis orientation for both joints -->
+</joint>
+
+<joint name="base_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 1.57"/> 
+  <parent link="base_link"/>
+  <child link="dummy"/>
+  <axis xyz="0 0 1"/> <!-- Same axis orientation for both joints -->
+</joint>
+
+
+</robot>

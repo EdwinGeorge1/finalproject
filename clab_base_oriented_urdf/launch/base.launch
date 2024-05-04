@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="base">
+
+
+<param name="robot_description"
+  command="xacro --inorder '$(find pr2_description)/urdf/CLAB_BASE_ORIENTED_URDF.urdf.xacro'" />

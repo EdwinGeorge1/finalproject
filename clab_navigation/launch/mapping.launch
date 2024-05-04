@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+	
+
+
+
+	<include file="$(find rplidar_ros)/launch/view_rplidar.launch"/>
+
+
+
+   <include file="$(find clab_navigation)/launch/gmapping.launch" />
+
+	 
+	
+    
+</launch>

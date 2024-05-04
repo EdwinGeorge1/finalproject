@@ -1,0 +1,28 @@
+[Unit]
+
+Description=start_ros
+
+After=network.target
+
+[Service]
+Type=oneshot
+User=jetson
+Environment=DISPLAY=:0
+
+
+ExecStart=/home/jetson/clab_ws/src/clab/clab_bringup/src/start_ros.sh
+ExecStop=/home/jetson/clab_ws/src/clab/clab_bringup/src/stop_ros.sh
+RemainAfterExit=yes
+#TimeoutSec=30 #it has to start in 30s
+#Restart=always
+#RestartSec=5
+#if it restarted more than 3 times in 100s then it wont restart again
+#StartLimitInterval=100
+#StartLimitBurst=3
+
+[Install]
+
+WantedBy=graphical.target
+
+
+
