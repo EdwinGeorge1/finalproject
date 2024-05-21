@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+
+  <arg name="map"     default="$(find hdf_nav)/maps"/>
+  <node name="map_node" pkg="map_server" type="map_server" args="$(arg map)/new_corr.yaml" respawn="false">
+  </node>
+
+
+
+</launch>

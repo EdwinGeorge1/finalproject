@@ -9,9 +9,8 @@ map_type: costmap
 transform_tolerance: 2 # seconds
 track_unknown_space: false
 
-observation_sources: scan_ scan
+observation_sources: scan
 
-scan_: {sensor_frame: laser_link, data_type: LaserScan, topic: scan_filtered, marking: true, clearing: true, inf_is_valid: false, observation_persistence: 0.0, raytrace_range: 2.0, obstacle_range: 1.5}
 
 
 scan: {sensor_frame: laser_link, data_type: LaserScan, topic: scan, marking: false, clearing: true, inf_is_valid: false, observation_persistence: 0.0, raytrace_range: 2.0, obstacle_range: 1.5}

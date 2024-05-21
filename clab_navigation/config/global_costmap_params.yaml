@@ -16,4 +16,4 @@ global_costmap:
 # if needed obstace layer
   obstacle_layer:
     observation_sources: scan
-    scan: {sensor_frame: laser_link, data_type: LaserScan, topic: scan_filtered, marking: true, clearing: true, inf_is_valid: false}
+    scan: {sensor_frame: laser_link, data_type: LaserScan, topic: scan, marking: true, clearing: true, inf_is_valid: false}

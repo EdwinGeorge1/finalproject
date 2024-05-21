@@ -1,0 +1,10 @@
+<launch>
+ 
+   <arg name="map"     default="$(find clab_navigation)/maps"/>
+  <arg name="scan_topic"  default="/scan_filtered" />
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    <!--remap from="scan" to="scan_filtered"/-->
+    <rosparam file="$(find clab_navigation)/config/gmapping.yaml" command="load"/>
+    <remap from="scan" to="$(arg scan_topic)"/>
+  </node>
+</launch>

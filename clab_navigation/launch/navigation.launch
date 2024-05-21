@@ -13,9 +13,12 @@
 
     <!-- <include file="$(find laser_filters)/examples/sector_filter_example.launch" />-->
 
-    <include file="$(find clab_navigation)/launch/move_basee.launch"/>
+    <include file="$(find clab_navigation)/launch/move_base.launch"/>
 
-    <include file="$(find clab_navigation)/launch/amcl.launch" />
+    <include file="$(find clab_navigation)/launch/amcl_new.launch" />
+    <include file="$(find clab_base_oriented_urdf)/launch/description.launch" />
+
+    <!-- Corrected path to include description.launch -->
 
 
 </launch>

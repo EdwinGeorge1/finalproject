@@ -10,6 +10,7 @@
 
 
    <include file="$(find clab_navigation)/launch/gmapping.launch" />
+   <include file="$(find clab_base_oriented_urdf)/launch/description.launch" />
 
 	 
 	

@@ -1,0 +1,21 @@
+planners:
+  - name: 'GlobalPlanner'
+    type: 'global_planner/GlobalPlanner'
+controller_frequency: 10.0
+controller_max_retries: 2
+controller_patience: 2.0
+planner_frequency: 0.0
+planner_max_retries: 3
+planner_patience: 4.0
+GlobalPlanner:
+  allow_unknown: true
+  default_tolerance: 0.0
+  visualize_potential: true
+  use_dijkstra: true
+  use_quadratic: true
+  use_grid_path: false
+  old_navfn_behaviour: false
+  lethal_cost: 253
+  neutral_cost: 66
+  cost_factor: 0.75
+

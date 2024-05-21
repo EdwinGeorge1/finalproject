@@ -1,0 +1,78 @@
+controllers:
+  #  - name: 'eband'
+  #    type: 'eband_local_planner/EBandPlannerROS'
+  #  - name: 'dwa'
+  #    type: 'dwa_local_planner/DWAPlannerROS'
+   - name: 'trajectory'
+     type: 'base_local_planner/TrajectoryPlannerROS'
+
+# eband:
+#   Ctrl_Rate: 20.0
+#   bubble_velocity_multiplier: 3.0
+#   costmap_weight: 20.0
+#   differential_drive: true
+#   disallow_hysteresis: false
+#   eband_equilibrium_approx_max_recursion_depth: 3
+#   eband_equilibrium_relative_overshoot: 0.75
+#   eband_external_force_gain: 8.0 #3.0
+#   eband_internal_force_gain: 5.0 #2.0
+#   eband_min_relative_overlap: 0.7
+#   eband_significant_force_lower_bound: 0.15
+#   eband_tiny_bubble_distance: 0.003
+#   eband_tiny_bubble_expansion: 0.01
+#   in_place_trans_vel: 0.0
+#   k_damp: 3.5
+#   k_prop: 4.0
+#   marker_lifetime: 0.5
+#   max_acceleration: 0.2
+#   max_rotational_acceleration: 0.3
+#   max_translational_acceleration: 0.4
+#   # Lower values for testing with the actual robot.
+#   max_vel_lin: 0.3 #0.5 #1.45
+#   max_vel_th: 0.3 #0.5 #2.0
+#   min_in_place_vel_th: 0.05
+#   min_vel_lin: 0.0
+#   min_vel_th: 0.0
+#   num_iterations_eband_optimization: 4
+#   rot_stopped_vel: 0.01
+#   rotation_correction_threshold: 0.5
+#   rotation_threshold_multiplier: 1.0
+#   trans_stopped_vel: 0.01
+#   virtual_mass: 100.0
+#   xy_goal_tolerance: 0.2
+#   yaw_goal_tolerance: 0.2
+
+# dwa:
+#   path_distance_bias: 75.0
+#   goal_distance_bias: 48.0
+
+#Trajectory_planner
+trajectory:
+#ROBOT CONFIGURATION PARAMETERS
+  max_vel_x: 0.3 #0.20
+  min_vel_x: 0.05
+  
+  max_vel_theta: 0.5
+  min_vel_theta: -0.5
+  min_in_place_vel_theta: 0.3 #0.1
+  escape_vel: 0.0 #-0.05 #-0.1
+  
+  acc_lim_theta: 0.3 #0.7
+  acc_lim_x: 1.0 #2.0
+  acc_lim_y: 0.0
+  holonomic_robot: false
+  
+#Forward Simulation Parameters  
+  sim_time: 2.5 #3.0
+  vx_samples: 10
+  vy_samples: 0
+  vtheta_samples: 10
+
+#Trajectory Scoring Parameters
+  pdist_scale: 3.0 #0.4 # higher values will make robot stikc to path
+  gdist_scale: 2.0
+  occdist_scale: 0.01 # default: 0.01
+  yaw_goal_tolerance: 0.05 #0.3
+  xy_goal_tolerance: 0.10 #0.3
+  latch_xy_goal_tolerance: false
+  dwa: false

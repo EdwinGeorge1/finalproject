@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+	
+	<include file="$(find clab_base_oriented_urdf)/launch/description.launch"/>
+    <node pkg="clab_navigation" type="odometry.py" name="odom">
+    </node>
+	
+	
+	<!-- <include file="$(find rplidar_ros)/launch/view_rplidar.launch"/> -->
+    <include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+
+<include file="$(find laser_filters)/examples/sector_filter_example.launch" />
+	
+	<include file="$(find clab_navigation)/launch/move_base.launch" />
+    <include file="$(find clab_navigation)/launch/amcl_new.launch" />
+
+   <node pkg="clab_navigation" type="mbf_state_machine.py" name="mbf_state_machine" output="screen"/>
+	 
+	
+    
+</launch>
